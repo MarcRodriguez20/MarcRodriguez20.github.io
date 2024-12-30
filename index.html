@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Adodas Tienda Oficial</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <header>
+        <div class="logo">
+            <img src="images/logo.png" alt="Mi Sitio Web" width="100">
+        </div>
+        <nav>
+            <ul>
+                <li><a href="index.html" class="nav-link">Inicio</a></li>
+                <li><a href="galeria.html" class="nav-link">Galería</a></li>
+                <li><a href="presupuesto.html" class="nav-link">Presupuesto</a></li>
+                <li><a href="contacto.html" class="nav-link">Contacto</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+      <h1>Adodas Tienda Oficial</h1>
+      <p>HISTORIAS, MODA Y ROPA DEPORTIVA ADODAS, DESDE 1948</p>
+  </main>
+
+  <!-- Sección 1: Introducción -->
+  <section id="intro">
+    <h2>Bienvenidos al futuro en calzado</h2>
+    <p>Sed bienvenidos a la tienda oficial de Adodas</p>
+  </section>
+
+  <!-- Sección 2: Noticias -->
+  <section id="news">
+    <h2>Últimas Noticias</h2>
+    <ul id="newsList">
+    </ul>
+    
+  </section>
+
+  <!-- Sección 3: Servicios -->
+  <section id="services">
+    <h2>Servicios</h2>
+    <ul>
+      <li>Atención al cliente</li>
+      <li>Entregas y devoluciónes</li>
+      <li>Conviertete en miembro</li>
+    </ul>
+  </section>
+
+  <!-- Sección 4: Contacto -->
+  <section id="contact">
+    <h2>Contacto</h2>
+    <p>Contáctanos a través de <a href="mailto:adodasoficial@gmail.com">adodasoficial@gmail.com</a></p>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="social-icons">
+        <a href="https://facebook.com" target="_blank">
+            <img src="images/facebook2.jpeg" alt="Facebook">
+        </a>
+        <a href="https://twitter.com" target="_blank">
+            <img src="images/xtwitter.jpeg" alt="Twitter">
+        </a>
+        <a href="https://instagram.com" target="_blank">
+            <img src="images/insta.jpeg" alt="Instagram">
+        </a>
+    </div>
+    <p>Dirección: Av. Principal 123, Valencia, España</p>
+    <p><a href="aviso-legal.html">Aviso Legal</a></p>
+</footer>
+
+<script src="js/script.js"></script>
+
+  <!-- Las noticias se cargarán aquí -->
+
+  <script src="json/news.js"></script>
+  <script>
+    const newsList = document.getElementById('newsList');
+
+    // Iterar sobre el JSON cargado y mostrar las noticias
+    data.news.forEach(newsItem => {
+  const listItem = document.createElement('li');
+  listItem.innerHTML = `
+    <div>
+      <strong>${newsItem.title}</strong>
+      <p>${newsItem.description}</p>
+    </div>
+  `;
+  newsList.appendChild(listItem);
+});
+  </script>
+  
+
+</body>
+</html>

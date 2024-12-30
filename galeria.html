@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Galería de Zapatillas</title>
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+      #gallery {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 15px;
+        margin: 20px;
+      }
+      .gallery-item {
+        text-align: center;
+        width: 300px;
+        cursor: pointer;
+        transition: transform 0.3s ease;
+      }
+      .gallery-item:hover {
+        transform: scale(1.1);
+      }
+      .gallery-item img {
+        width: 100%;
+        border-radius: 8px;
+      }
+      .item-name {
+        margin-top: 10px;
+        font-size: 1.1em;
+        font-weight: bold;
+        color: #333;
+      }
+      #lightbox {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.8);
+        display: none;
+        justify-content: center;
+        align-items: center;
+      }
+      #lightbox img {
+        max-width: 90%;
+        max-height: 90%;
+      }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="logo">
+            <img src="images/logo.png" alt="Mi Sitio Web" width="100">
+        </div>
+        <nav>
+            <ul>
+                <li><a href="index.html" class="nav-link">Inicio</a></li>
+                <li><a href="galeria.html" class="nav-link active">Galería</a></li>
+                <li><a href="presupuesto.html" class="nav-link">Presupuesto</a></li>
+                <li><a href="contacto.html" class="nav-link">Contacto</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <h1>Galería de Zapatillas</h1>
+        <section id="gallery"></section>
+    </main>
+
+    <section id="gallery">
+      <!-- Las imágenes se cargarán aquí dinámicamente -->
+    </section>
+
+    <!-- Lightbox para ver imágenes en grande -->
+    <div id="lightbox">
+      <img src="" alt="Imagen Ampliada">
+    </div>
+
+    <footer>
+        <p>&copy; 2024 Adodas Oficial. Todos los derechos reservados.</p>
+    </footer>
+
+    <script>
+      // Array de imágenes con nombres
+      const images = [
+        { src: 'images/AdodasSamba.jpg', name: 'Adodas Samba' },
+        { src: 'images/Adodas Basics.jpg', name: 'Adodas Basics' },
+        { src: 'images/AdodasCampus.jpg', name: 'Adodas Campus' },
+        { src: 'images/AdodasKarem.jpg', name: 'Adodas Karem' }
+      ];
+
+      const gallery = document.getElementById('gallery');
+      const lightbox = document.getElementById('lightbox');
+      const lightboxImg = lightbox.querySelector('img');
+
+      // Cargar imágenes dinámicamente
+      images.forEach(item => {
+        const container = document.createElement('div');
+        container.classList.add('gallery-item');
+
+        const img = document.createElement('img');
+        img.src = item.src;
+        img.alt = item.name;
+        img.addEventListener('click', () => {
+          lightbox.style.display = 'flex';
+          lightboxImg.src = item.src;
+        });
+
+        const name = document.createElement('div');
+        name.classList.add('item-name');
+        name.textContent = item.name;
+
+        // Añadir imagen y nombre al contenedor
+        container.appendChild(img);
+        container.appendChild(name);
+        
+        gallery.appendChild(container);
+      });
+
+      // Cerrar el lightbox al hacer clic fuera de la imagen
+      lightbox.addEventListener('click', (e) => {
+        if (e.target !== lightboxImg) {
+          lightbox.style.display = 'none';
+        }
+      });
+    </script>
+ 
+    <!-- Footer -->
+
+    <footer>
+        <div class="social-icons">
+        <a href="https://facebook.com" target="_blank">
+            <img src="images/facebook2.jpeg" alt="Facebook">
+        </a>
+        <a href="https://twitter.com" target="_blank">
+            <img src="images/xtwitter.jpeg" alt="Twitter">
+        </a>
+        <a href="https://instagram.com" target="_blank">
+            <img src="images/insta.jpeg" alt="Instagram">
+        </a>
+    </div>
+    <p>Dirección: Av. Principal 123, Valencia, España</p>
+    <p><a href="aviso-legal.html">Aviso Legal</a></p>
+    </footer>
+
+    <script src="js/script.js"></script>
+    </body>
+    </html>

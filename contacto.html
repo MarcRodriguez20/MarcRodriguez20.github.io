@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contacto</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+    <style>
+      #map {
+        height: 400px;
+        width: 100%;
+        margin: 20px 0;
+      }
+      .contact-info {
+        text-align: center;
+        margin: 20px 0;
+      }
+      .contact-info h2, p {
+        margin: 10px 0;
+      }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="logo">
+            <img src="images/logo.png" alt="Mi Sitio Web" width="100">
+        </div>
+        <nav>
+            <ul>
+                <li><a href="index.html" class="nav-link">Inicio</a></li>
+                <li><a href="galeria.html" class="nav-link">Galería</a></li>
+                <li><a href="presupuesto.html" class="nav-link">Presupuesto</a></li>
+                <li><a href="contacto.html" class="nav-link active">Contacto</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <h1>Contacto</h1>
+        <div id="map" style="height: 400px;"></div>
+    </main>
+
+    <section class="contact-info">
+        <h2>Nuestra Ubicación</h2>
+        <p>Dirección: Av. Principal 123, Valencia, España</p>
+        <p>Teléfono: +34 659 64 45 98</p>
+        <p>Email: adodasoficial@gmail.com</p>
+    </section>
+
+    <!-- Mapa Dinámico -->
+    
+
+    <footer>
+        <div class="social-icons">
+        <a href="https://facebook.com" target="_blank">
+            <img src="images/facebook2.jpeg" alt="Facebook">
+        </a>
+        <a href="https://twitter.com" target="_blank">
+            <img src="images/xtwitter.jpeg" alt="Twitter">
+        </a>
+        <a href="https://instagram.com" target="_blank">
+            <img src="images/insta.jpeg" alt="Instagram">
+        </a>
+    </div>
+    <p>Dirección: Av. Principal 123, Valencia, España</p>
+    <p><a href="aviso-legal.html">Aviso Legal</a></p>
+    </footer>
+
+    <!-- Leaflet JS para mapas -->
+    <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+    <script src="js/map.js"></script>
+
+    
+
+</body>
+</html>

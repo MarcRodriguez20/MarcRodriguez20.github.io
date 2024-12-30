@@ -1,0 +1,70 @@
+/* Estilos generales */
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+/* Header y Barra de Navegación */
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: #333;
+  color: white;
+  padding: 15px 0;
+  text-align: center;
+  z-index: 1000;
+}
+
+nav ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+}
+
+nav ul li {
+  margin: 0 20px;
+}
+
+nav ul li a {
+  color: white;
+  text-decoration: none;
+  padding: 10px 15px;
+  display: inline-block;
+  font-size: 1.1em;
+}
+
+/* Resalta la página activa */
+nav ul li a.active {
+  background-color: #007bff;
+  border-radius: 5px;
+}
+
+/* Contenido principal con margen para que no quede debajo del header */
+main {
+  margin-top: 100px;
+  padding: 20px;
+}
+
+/* Footer */
+footer {
+  background-color: #333;
+  color: white;
+  text-align: center;
+  padding: 30px 0;
+}
+
+footer .social-icons img {
+  width: 30px;
+  margin: 0 10px;
+  vertical-align: middle;
+}
+
+footer a {
+  color: white;
+  text-decoration: none;
+}
